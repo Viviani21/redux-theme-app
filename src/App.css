@@ -98,3 +98,25 @@ label:active:after{
 input:checked+label+.background{
   background: #242424;
 }
+label svg{
+  position:absolute;
+  width: 120px;
+  /* top:40px; */
+  z-index:100;
+}
+label svg.sun{
+  left:40px;
+  fill:#fff;
+  transition: 0.3s;
+}
+label svg.moon{
+  left:340px;
+  fill:#7e7e7e;
+  transition: 0.3s;
+}
+input:checked + label svg.sun{
+  fill:#7e7e7e;
+}
+input:checked + label svg.moon{
+  fill:#fff;
+}
