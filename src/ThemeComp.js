@@ -4,10 +4,7 @@ import {toggleTheme} from './redux/actions';
 
 
 const ThemeComp = ({ theme,toggleTheme }) => {
-   /*  const handleThemeChange = () => {
-        toggleTheme();
-    };
- */
+  
     return (
        <div>
        <div className={`App ${theme}`}>
@@ -62,8 +59,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps =  {
     toggleTheme,
-        /* toggleTheme: () =>
-            dispatch({ type: 'TOGGLE_THEME' }) */
-    
+     
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeComp);
