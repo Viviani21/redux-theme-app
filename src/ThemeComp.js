@@ -1,18 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {toggleTheme} from './redux/actions';
 
 
 const ThemeComp = ({ theme,toggleTheme }) => {
-    const handleThemeChange = () => {
+   /*  const handleThemeChange = () => {
         toggleTheme();
     };
-
+ */
     return (
        <div>
        <div className={`App ${theme}`}>
             <h1>{theme}</h1>
             <input type="checkbox" id="darkmode-toggle" />
-             <label for="darkmode-toggle" onClick={handleThemeChange}>
+             <label for="darkmode-toggle" onClick={toggleTheme}>
                 {theme === 'LIGHT' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
                 <svg xmlns="http://www.w3.org/2000/svg" class="sun" width="800px" height="200px" viewBox="0 0 24 24" fill="none">
 <circle cx="12" cy="12" r="5" stroke="#1C274C" stroke-width="1.5"/>
@@ -59,10 +60,10 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        toggleTheme: () =>
-            dispatch({ type: 'TOGGLE_THEME' })
-    };
+const mapDispatchToProps =  {
+    toggleTheme,
+        /* toggleTheme: () =>
+            dispatch({ type: 'TOGGLE_THEME' }) */
+    
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeComp);
